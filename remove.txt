@@ -1,0 +1,4 @@
+device/xiaomi/sm8350-common
+vendor/xiaomi/
+kernel/xiaomi/
+hardware/xiaomi
