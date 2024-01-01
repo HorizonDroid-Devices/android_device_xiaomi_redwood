@@ -17,12 +17,13 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_redwood
 TARGET_RECOVERY_DEVICE_MODULES := libinit_redwood
 
 # Kernel
-TARGET_KERNEL_CONFIG += vendor/redwood_QGKI.config
+TARGET_KERNEL_CONFIG += vendor/redwood-fragment.config
 
 # Kernel modules
 BOOT_KERNEL_MODULES := \
     goodix_core.ko \
     xiaomi_touch.ko
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load))
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(BOOT_KERNEL_MODULES)
 
 # Partitions
