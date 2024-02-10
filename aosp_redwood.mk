@@ -11,14 +11,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from redwood device
 $(call inherit-product, device/xiaomi/redwood/device.mk)
 
-# Inherit some common Evolution stuff.
-$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+# Inherit some common aosp stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 PRODUCT_BRAND := POCO
 PRODUCT_DEVICE := redwood
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := 22101320G
-PRODUCT_NAME := evolution_redwood
+PRODUCT_NAME := aosp_redwood
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
@@ -36,9 +36,11 @@ BUILD_FINGERPRINT := POCO/redwood_global/redwood:13/RKQ1.211001.001/V14.0.5.0.TM
 # Blur
 TARGET_ENABLE_BLUR := true
 
-# Evolution specific flags
-EVO_BUILD_TYPE := OFFICIAL
+# aosp specific flags
 TARGET_BOOT_ANIMATION_RES := 1080
-#TARGET_USES_MINI_GAPPS	:= true
-TARGET_USES_PICO_GAPPS	:= true
 TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_DEBLOAT := true
+
+# HorizonDroid prop
+CUSTOM_BUILD_TYPE := Official
+HORIZON_MAINTAINER := Thereache
